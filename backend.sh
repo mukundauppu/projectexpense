@@ -54,7 +54,7 @@ rm -rf /app/*
 unzip /tmp/backend.zip &>>LOGS_FILE_NAME
 cd /app &>>LOGS_FILE_NAME
 npm install &>>LOGS_FILE_NAME
-cp /home/root/projectexpense/backend.service /etc/systemd/system/backend.service
+cp /home/ec2-user/projectexpense/backend.service /etc/systemd/system/backend.service
 dnf install mysql -y
 VALIDATE $? "Install mysql client "
 
