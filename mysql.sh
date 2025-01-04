@@ -36,13 +36,13 @@ echo "script executed at : $TIMESTMP" &>>LOGS_FILE_NAME
 dnf install mysql -y &>>LOGS_FILE_NAME
 VALIDATE $? "Inatlling mysql"
 
-systemctl enable mysqld
+systemctl enable mysqld &>>LOGS_FILE_NAME
 VALIDATE $? "Enabling mysql server"
 
-systemctl start mysqld
+systemctl start mysqld &>>LOGS_FILE_NAME
 VALIDATE $? "Start mysql server"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOGS_FILE_NAME
 VALIDATE $? "Root password setting"
 
 
