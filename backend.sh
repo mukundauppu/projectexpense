@@ -55,12 +55,14 @@ unzip /tmp/backend.zip &>>LOGS_FILE_NAME
 cd /app &>>LOGS_FILE_NAME
 npm install &>>LOGS_FILE_NAME
 cp /root/projectexpense/backend.service /etc/systemd/system/backend.service
+systemctl daemon-reload
+systemctl start backend
+systemctl enable backend
 dnf install mysql -y
 VALIDATE $? "Install mysql client "
 
 mysql -h mysql.mukunda.store -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "Setting up the transactions and tables"
 
-systemctl daemon-reload
-systemctl start backend
-systemctl enable backend
+systemctl restart backend
+
