@@ -46,7 +46,7 @@ then
  else
  echo -e "already exiists $Y ...Skipping"
  fi
-useradd expense &>>LOGS_FILE_NAME
+
 mkdir -p /app &>>LOGS_FILE_NAME
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>LOGS_FILE_NAME
 cd /app &>>LOGS_FILE_NAME
