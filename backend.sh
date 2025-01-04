@@ -50,11 +50,11 @@ then
 mkdir -p /app &>>LOGS_FILE_NAME
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>LOGS_FILE_NAME
 cd /app &>>LOGS_FILE_NAME
-rm -rf /app/*
+rm -rf /app/* &>>LOGS_FILE_NAME
 unzip /tmp/backend.zip &>>LOGS_FILE_NAME
 cd /app &>>LOGS_FILE_NAME
 npm install &>>LOGS_FILE_NAME
-cp /root/projectexpense/backend.service /etc/systemd/system/backend.service
+cp /root/projectexpense/backend.service /etc/systemd/system/backend.service 
 systemctl daemon-reload
 systemctl start backend
 systemctl enable backend
