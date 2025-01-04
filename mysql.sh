@@ -33,7 +33,7 @@ fi
 }
 echo "script executed at : $TIMESTMP" &>>LOGS_FILE_NAME
 
-dnf install mysql -y &>>LOGS_FILE_NAME
+dnf install mysql-server -y &>>LOGS_FILE_NAME
 VALIDATE $? "Inatlling mysql"
 
 systemctl enable mysqld &>>LOGS_FILE_NAME
