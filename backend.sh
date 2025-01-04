@@ -49,7 +49,7 @@ cp /home/root/projectexpense/backend.service /etc/systemd/system/backend.service
 dnf install mysql -y
 VALIDATE $? "Install mysql client "
 
-mysql -h mukunda.store -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.mukunda.store -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "Setting up the transactions and tables"
 
 systemctl daemon-reload
